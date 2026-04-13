@@ -1,21 +1,24 @@
 :root {
-  --color-bg: #fff7f9;
-  --color-bg-mid: #fdf2f5;
-  --color-surface: #fffcfd;
-  --color-ink: #3d2f36;
-  --color-muted: #7a6570;
-  --color-soft: #f3e4ea;
-  --color-brand: #c76b88;
-  --color-brand-dark: #9d4a65;
-  --color-accent: #c9a227;
-  --color-accent-soft: #fcecf2;
-  --color-cta-end: #b85a78;
+  --color-bg: #fff5fa;
+  --color-bg-mid: #fdf0f7;
+  --color-bg-lilac: #faf6ff;
+  --color-surface: rgba(255, 252, 254, 0.92);
+  --color-ink: #4a3542;
+  --color-muted: #8b6f7c;
+  --color-soft: #edd8e4;
+  --color-brand: #d07a96;
+  --color-brand-dark: #a85573;
+  --color-accent: #d4a574;
+  --color-accent-soft: #fdeef4;
+  --color-cta-end: #c97aa1;
+  --color-lilac-mist: rgba(186, 160, 210, 0.18);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Nunito", system-ui, sans-serif;
-  --radius: 18px;
-  --radius-lg: 28px;
-  --shadow: 0 22px 56px rgba(157, 74, 101, 0.1);
-  --shadow-sm: 0 10px 28px rgba(157, 74, 101, 0.07);
+  --font-script: "Petit Formal Script", cursive;
+  --radius: 20px;
+  --radius-lg: 32px;
+  --shadow: 0 24px 60px rgba(168, 85, 115, 0.11);
+  --shadow-sm: 0 12px 32px rgba(168, 85, 115, 0.08);
   --max: 1120px;
   --header-h: 72px;
 }
@@ -34,9 +37,12 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-ink);
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 45%, #fff9fb 100%);
+  background:
+    radial-gradient(ellipse 120% 80% at 100% -20%, var(--color-lilac-mist), transparent 55%),
+    radial-gradient(ellipse 90% 60% at -10% 30%, rgba(253, 238, 244, 0.9), transparent 50%),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-mid) 38%, var(--color-bg-lilac) 100%);
   background-attachment: fixed;
 }
 
@@ -86,9 +92,9 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 247, 249, 0.9);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-soft);
+  background: rgba(255, 245, 250, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(237, 216, 228, 0.85);
 }
 
 .header-inner {
@@ -102,11 +108,7 @@ a:hover {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
+  gap: 0.5rem;
   color: var(--color-ink);
   text-decoration: none;
 }
@@ -115,9 +117,23 @@ a:hover {
   color: var(--color-brand-dark);
 }
 
+.logo:hover .logo-text {
+  color: var(--color-brand-dark);
+}
+
 .logo-mark {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(168, 85, 115, 0.15));
+}
+
+.logo-text {
+  font-family: var(--font-script);
+  font-size: clamp(1.85rem, 4vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-brand-dark);
 }
 
 .nav-toggle {
@@ -177,7 +193,7 @@ a:hover {
 }
 
 .nav-list a:hover {
-  color: var(--color-ink);
+  color: var(--color-brand);
 }
 
 .nav-cta {
@@ -194,7 +210,7 @@ a:hover {
     left: 0;
     right: 0;
     top: var(--header-h);
-    background: var(--color-surface);
+    background: rgba(255, 252, 254, 0.98);
     border-bottom: 1px solid var(--color-soft);
     padding: 1rem 1.25rem 1.25rem;
     box-shadow: var(--shadow-sm);
@@ -305,9 +321,28 @@ a:hover {
   position: absolute;
   width: min(90vw, 28rem);
   height: min(90vw, 28rem);
-  background: radial-gradient(circle, rgba(199, 107, 136, 0.14) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(208, 122, 150, 0.16) 0%, transparent 68%);
   top: -18%;
   right: -8%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: min(70vw, 22rem);
+  height: min(70vw, 22rem);
+  background: radial-gradient(circle, rgba(186, 160, 210, 0.12) 0%, transparent 65%);
+  bottom: 5%;
+  left: -12%;
+  pointer-events: none;
+}
+
+.wave-divider {
+  height: 3rem;
+  margin-top: -1px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%23fdf0f7' d='M0 48h1440V24c-120 16-240 16-360 0S720 8 600 24 360 40 240 24 120 8 0 24v24z'/%3E%3C/svg%3E")
+    center bottom / 100% 100% no-repeat;
   pointer-events: none;
 }
 
@@ -328,22 +363,33 @@ a:hover {
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-brand);
-  margin: 0 0 0.75rem;
+  color: var(--color-brand-dark);
+  margin: 0 0 0.85rem;
+}
+
+.eyebrow::after {
+  content: "";
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin-top: 0.65rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-brand), rgba(212, 165, 116, 0.65), transparent);
 }
 
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.35rem, 4.6vw, 3.35rem);
-  line-height: 1.1;
-  font-weight: 700;
+  line-height: 1.12;
+  font-weight: 600;
+  font-style: italic;
   margin: 0 0 1rem;
   color: var(--color-ink);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .lead {
@@ -400,10 +446,10 @@ a:hover {
 }
 
 .hero-card {
-  background: var(--color-surface);
+  background: linear-gradient(160deg, #fff 0%, rgba(255, 250, 252, 0.97) 100%);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-soft);
+  border: 1px solid rgba(237, 216, 228, 0.9);
   overflow: hidden;
 }
 
@@ -420,9 +466,11 @@ a:hover {
 
 .hero-card-title {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.22rem;
   margin: 0 0 0.35rem;
+  color: var(--color-brand-dark);
 }
 
 .hero-card-text {
@@ -436,7 +484,7 @@ a:hover {
 }
 
 .section--tint {
-  background: linear-gradient(180deg, #fceef3 0%, var(--color-bg-mid) 55%, var(--color-bg) 100%);
+  background: linear-gradient(180deg, #fceef6 0%, #f8e8f2 40%, #faf5ff 85%, var(--color-bg) 100%);
 }
 
 .section-head {
@@ -453,8 +501,11 @@ a:hover {
 
 .section-head h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+  font-weight: 600;
+  font-style: italic;
   margin: 0 0 0.5rem;
+  color: var(--color-brand-dark);
 }
 
 .section-sub {
@@ -478,11 +529,12 @@ a:hover {
 }
 
 .card {
-  background: var(--color-surface);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.95) 0%, var(--color-surface) 100%);
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.75rem 2rem;
-  border: 1px solid var(--color-soft);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(237, 216, 228, 0.95);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
 }
 
 .card-icon {
@@ -492,8 +544,11 @@ a:hover {
 
 .card h3 {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 600;
   margin: 0 0 0.65rem;
+  color: var(--color-brand-dark);
 }
 
 .card > p {
@@ -549,6 +604,10 @@ a:hover {
 .step h3 {
   margin: 0 0 0.35rem;
   font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-brand-dark);
 }
 
 .step p {
@@ -580,27 +639,28 @@ a:hover {
 }
 
 .pill-list li {
-  padding: 0.4rem 0.85rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-soft);
+  padding: 0.45rem 1rem;
+  background: linear-gradient(135deg, #fff 0%, var(--color-accent-soft) 100%);
+  border: 1px solid rgba(237, 216, 228, 0.9);
   border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-brand-dark);
 }
 
 .map-block {
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 28% 38%, rgba(199, 107, 136, 0.22) 0%, transparent 48%),
-    radial-gradient(circle at 72% 62%, rgba(201, 162, 39, 0.12) 0%, transparent 42%),
-    linear-gradient(150deg, #f5e6ee, #ead5df);
-  border: 1px solid var(--color-soft);
+    radial-gradient(circle at 28% 38%, rgba(208, 122, 150, 0.25) 0%, transparent 48%),
+    radial-gradient(circle at 72% 58%, rgba(186, 160, 210, 0.2) 0%, transparent 44%),
+    radial-gradient(circle at 72% 62%, rgba(212, 165, 116, 0.1) 0%, transparent 42%),
+    linear-gradient(155deg, #f8e8f2, #ebe0f5);
+  border: 1px solid rgba(237, 216, 228, 0.95);
   display: grid;
   place-items: center;
   position: relative;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .map-pin {
@@ -671,7 +731,9 @@ a:hover {
 
 .cta-band h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(1.65rem, 3vw, 2.05rem);
+  font-style: italic;
+  font-weight: 600;
   margin: 0 0 0.5rem;
 }
 
@@ -691,8 +753,8 @@ a:hover {
 }
 
 .site-footer {
-  background: linear-gradient(180deg, #4a3540 0%, #3d2f36 100%);
-  color: #f5e8ee;
+  background: linear-gradient(180deg, #6b4e5d 0%, #5a4150 45%, #4a3542 100%);
+  color: #fceef4;
   padding: 2.5rem 0 1.5rem;
   font-size: 0.9375rem;
 }
@@ -710,10 +772,11 @@ a:hover {
 }
 
 .footer-brand {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.65rem;
   margin: 0 0 0.35rem;
+  letter-spacing: 0.04em;
 }
 
 .footer-tagline {
