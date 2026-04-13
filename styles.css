@@ -537,6 +537,16 @@ strong {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.cards--3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .cards--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 720px) {
   .cards--2 {
     grid-template-columns: 1fr;
