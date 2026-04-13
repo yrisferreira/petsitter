@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PetSister — hospedagem e passeios para pets em São Paulo. Cuidado com carinho na sua região." />
+  <title>PetSister | Hospedagem e passeios para pets em São Paulo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container header-inner">
+      <a class="logo" href="#topo" aria-label="PetSister — início">
+        <span class="logo-mark" aria-hidden="true">🐾</span>
+        <span class="logo-text">PetSister</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#area">São Paulo</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#contato" class="btn btn--small btn--primary nav-cta">Falar no WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Cuidado de verdade em São Paulo</p>
+          <h1>Hospedagem e passeios para o seu pet se sentir em casa</h1>
+          <p class="lead">
+            Sou a PetSister: ofereço hospedagem segura e passeios sob medida para cães (e outros pets sob combinação), com rotina clara, carinho e comunicação com você.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" data-wa href="#contato">Quero um orçamento</a>
+            <a class="btn btn--ghost" href="#servicos">Ver serviços</a>
+          </div>
+          <ul class="hero-trust" aria-label="Destaques">
+            <li>Rotina e combinados por escrito</li>
+            <li>Fotos e atualizações durante a estadia</li>
+            <li>Experiência com pets em SP</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <span class="hero-emoji">🐕</span>
+              <p class="hero-card-title">Passeios &amp; brincadeiras</p>
+              <p class="hero-card-text">Horários e distâncias de acordo com a idade e energia do seu amigo.</p>
+            </div>
+          </div>
+          <div class="hero-card hero-card--alt">
+            <div class="hero-card-inner">
+              <span class="hero-emoji">🏠</span>
+              <p class="hero-card-title">Hospedagem acolhedora</p>
+              <p class="hero-card-text">Ambiente calmo, supervisão e carinho como se fosse da família.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <header class="section-head">
+          <h2>Serviços</h2>
+          <p class="section-sub">Do passeio rápido à hospedagem por vários dias — tudo alinhado com você antes de começar.</p>
+        </header>
+        <div class="cards cards--2">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🚶</div>
+            <h3>Passeios</h3>
+            <p>Passeios individuais ou em pequenos grupos compatíveis, com foco em segurança (coleira, guia, rota) e necessidades do seu pet — idosos, filhotes ou muita energia.</p>
+            <ul class="card-list">
+              <li>Duração combinada (ex.: 30 ou 60 minutos)</li>
+              <li>Hidratação e pausas quando fizer sentido</li>
+              <li>Relato breve ao final (se desejar)</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🛏️</div>
+            <h3>Hospedagem</h3>
+            <p>Hospedagem em ambiente residencial, com rotina de alimentação, passeios e descanso combinados. Ideal para viagens e imprevistos com tranquilidade para você.</p>
+            <ul class="card-list">
+              <li>Reunião prévia (presencial ou vídeo) quando possível</li>
+              <li>Regras de saúde e documentação alinhadas na reserva</li>
+              <li>Atualizações por WhatsApp na frequência combinada</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="como-funciona">
+      <div class="container">
+        <header class="section-head">
+          <h2>Como funciona</h2>
+          <p class="section-sub">Processo simples, transparente e pensado para segurança do pet e da família.</p>
+        </header>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <div>
+              <h3>Você chama no WhatsApp</h3>
+              <p>Conte cidade, bairro, tipo de pet, datas e necessidades especiais (medicação, medo de fogos, etc.).</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <div>
+              <h3>Alinhamos detalhes</h3>
+              <p>Horários, valores, documentação e regras de convivência. Esclareço tudo antes de confirmar.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Reserva e cuidado</h3>
+              <p>Combinamos início do passeio ou check-in da hospedagem. Você acompanha como combinamos.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="area">
+      <div class="container split">
+        <div>
+          <header class="section-head section-head--left">
+            <h2>Atendimento em São Paulo</h2>
+            <p class="section-sub">Foco na capital paulista e regiões próximas conforme disponibilidade e deslocamento. Na mensagem, informe seu bairro para eu confirmar cobertura e prazo de resposta.</p>
+          </header>
+          <ul class="pill-list" aria-label="Regiões de exemplo">
+            <li>Zona Sul</li>
+            <li>Zona Oeste</li>
+            <li>Centro expandido</li>
+            <li>Outras regiões sob consulta</li>
+          </ul>
+        </div>
+        <div class="map-block" role="img" aria-label="Ilustração decorativa de mapa urbano">
+          <div class="map-pin">📍 SP</div>
+          <p class="map-caption">São Paulo — capital</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="faq">
+      <div class="container narrow">
+        <header class="section-head">
+          <h2>Perguntas frequentes</h2>
+        </header>
+        <div class="faq">
+          <details class="faq-item">
+            <summary>Você atende gatos ou outros animais?</summary>
+            <p>Meu foco principal é cães para passeios e hospedagem. Outros pets podem ser avaliados caso a caso — pergunte no WhatsApp com detalhes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Preciso levar ração e caminha?</summary>
+            <p>Em geral, mantemos a mesma ração e itens de rotina do pet para evitar estresse digestivo. Combinamos na reserva o que você traz e o que já fica disponível aqui.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Como funciona o pagamento?</summary>
+            <p>Valores e forma de pagamento são combinados por escrito na confirmação da reserva, conforme o tipo de serviço e período.</p>
+          </details>
+          <details class="faq-item">
+            <summary>E se meu pet tomar remédio?</summary>
+            <p>Medicamentos com prescrição e instruções claras podem ser administrados conforme combinado. Informe sempre dose, horário e nome do veterinário de referência.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band" id="contato">
+      <div class="container cta-inner">
+        <div>
+          <h2>Pronta para cuidar do seu pet</h2>
+          <p>Envie uma mensagem com bairro, datas e o nome do pet — respondo o quanto antes com disponibilidade e próximos passos.</p>
+        </div>
+        <a class="btn btn--light btn--large" data-wa href="#">Conversar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand"><span aria-hidden="true">🐾</span> PetSister</p>
+        <p class="footer-tagline">Hospedagem e passeios em São Paulo.</p>
+      </div>
+      <div>
+        <p class="footer-title">Contato</p>
+        <p><a class="footer-link" data-wa href="#">WhatsApp</a></p>
+        <p id="footer-email-line" hidden><a class="footer-link" id="footer-email" href="#"></a></p>
+      </div>
+      <div>
+        <p class="footer-title">Links</p>
+        <ul class="footer-links">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> PetSister. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
